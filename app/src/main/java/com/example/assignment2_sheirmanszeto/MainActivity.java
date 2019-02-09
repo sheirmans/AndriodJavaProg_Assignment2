@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         this.minEditText = (EditText) findViewById(R.id.editMinimum);
         this.maxEditText = (EditText) findViewById(R.id.editMaximum);
 
+     // Set the default fields
+        setDefaultMinMax();
+
      //generate random number
         this.generateButton = (Button)findViewById(R.id.buttonGenerate);
         this.generateButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
    }
+
+    private void setDefaultMinMax() {
+        // Convert integer to string to set edit text fields.
+        minEditText.setText(Integer.toString(minimum));
+        maxEditText.setText(Integer.toString(maximum));
+    }
 
     private void fetchValuesFromFields() {
         // Fetches the values set in the min and max text field. Save to class variables.
